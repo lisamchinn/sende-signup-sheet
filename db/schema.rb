@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_08_22_120638) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "completed"
+    t.boolean "completed", default: false
   end
 
 end
