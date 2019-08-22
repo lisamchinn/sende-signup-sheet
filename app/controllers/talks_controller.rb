@@ -10,7 +10,7 @@ class TalksController < ApplicationController
   end
 
   def create
-    Talk.new(talk_params)
+    Talk.create(talk_params)
     redirect_to talks_path
   end
 
@@ -29,7 +29,7 @@ class TalksController < ApplicationController
   private
 
   def talk_params
-    params.require(:talk).permit(:name, :topic, :date)
+    params.require(:talk).permit(:name, :topic, :date, :completed)
   end
 
   def find_talk
