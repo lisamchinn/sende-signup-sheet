@@ -7,16 +7,25 @@
 <h2>Here are the existing talks:</h2>
 <h4>Please choose a date that does not conflict</h4>
 
-<%= render 'form'%>
+<%= render 'form', talk: @talk %>
 
+<h1>Upcoming talks:</h1>
 <h1><% @talks.each do |talk| %></h1>
   <% unless talk.date.past? %>
       <li><%= talk.name%>, "<%= talk.topic %>", <%= talk.date %></li>
+      <%= link_to edit_talk_url(talk) do %>
+        <i class="fas fa-pencil-alt"></i>
+      <% end %>
       <%= link_to talk_path(talk), method: :delete, data: { confirm: "Are you sure you want to delete '#{talk.topic}'?" } do %>
         <i class="fas fa-trash"></i>
         <% end %>
       <% else %>
     <% end %>
-
 <% end %>
 
+<h1>Past talks:</h1>
+  <h1><% @talks.each do |talk| %></h1>
+    <% if talk.date.past? %>
+      <li><%= talk.name%>, "<%= talk.topic %>", <%= talk.date %></li>
+    <% end %>
+  <% end %>

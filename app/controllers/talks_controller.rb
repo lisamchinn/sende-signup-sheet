@@ -2,7 +2,9 @@ class TalksController < ApplicationController
   before_action :find_talk, only: [:edit, :update, :destroy]
 
   def index
-    @talks = Talk.all
+    @talks = Talk.all.order("date ASC")
+    @talk = Talk.new
+    #is this bad practice to put this here?
   end
 
   def new

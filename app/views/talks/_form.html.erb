@@ -1,13 +1,19 @@
-<form action="/talks" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <label for="name">Name: </label>
-  <input type="text" name="talk[name]" id="name">
+ <%= form_for(talk) do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
 
-  <label for="topic">Topic: </label>
-  <input type="text" name="talk[topic]" id="topic">
+    <div class="form-group">
+      <%= f.label :topic %>
+      <%= f.text_field :topic, class: 'form-control' %>
+    </div>
 
-  <label for="topic">Date: </label>
-  <input type="text" name="talk[date]" id="date">
+    <div class="form-group">
+      <%= f.label :date %>
+      <%= f.text_field :date, class: 'form-control' %>
+    </div>
 
-  <input type="submit">
-</form>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+
