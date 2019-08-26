@@ -1,31 +1,56 @@
-<h1>Sign up for your hat talk here!</h1>
-<img src="https://images.unsplash.com/photo-1561578428-c50f678e6cbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80" width="350" alt="hats">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
 
-<h2>Check the list below and input an available slot</h2>
+      <div class="d-flex justify-content-center mt-5">
+        <h1>Sign up for your hat talk!</h1>
+      </div>
 
+      <div class="hattalk-img d-flex justify-content-center mt-5">
+        <img src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="hats">
+      </div>
 
-<h2>Here are the existing talks:</h2>
-<h4>Please choose a date that does not conflict</h4>
+      <div class="hattalk-form">
+        <%= render 'form', talk: @talk %>
+      </div>
 
-<%= render 'form', talk: @talk %>
+      <div class="upcoming-talks mt-3">
 
-<h1>Upcoming talks:</h1>
-<h1><% @talks.each do |talk| %></h1>
-  <% unless talk.date.past? %>
-      <li><%= talk.name%>, "<%= talk.topic %>", <%= talk.date %></li>
-      <%= link_to edit_talk_url(talk) do %>
-        <i class="fas fa-pencil-alt"></i>
-      <% end %>
-      <%= link_to talk_path(talk), method: :delete, data: { confirm: "Are you sure you want to delete '#{talk.topic}'?" } do %>
-        <i class="fas fa-trash"></i>
-        <% end %>
-      <% else %>
-    <% end %>
-<% end %>
+        <div>
+          <h1>Upcoming talks:</h1>
+        </div>
 
-<h1>Past talks:</h1>
-  <h1><% @talks.each do |talk| %></h1>
-    <% if talk.date.past? %>
-      <li><%= talk.name%>, "<%= talk.topic %>", <%= talk.date %></li>
-    <% end %>
-  <% end %>
+        <div class="upcoming-talks-list">
+          <h1><% @talks.each do |talk| %></h1>
+            <% unless talk.date.past? %>
+              <div class="d-flex">
+                <li class="mb-2">👨‍🌾   <%= talk.date %>:  "<%= talk.topic %>"(<%= talk.name%>)</li>
+                  <%= link_to edit_talk_url(talk) do %>
+                    <i class="fas fa-pencil-alt"></i>
+                  <% end %>
+                  <%= link_to talk_path(talk), method: :delete, data: { confirm: "Are you sure you want to delete '#{talk.topic}'?" } do %>
+                    <i class="fas fa-trash"></i>
+                    <% end %>
+              </div>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="past-talks mt-5">
+        <div>
+          <h1>Past talks:</h1>
+        </div>
+
+        <div class="past-talks-list">
+          <h1><% @talks.each do |talk| %></h1>
+            <% if talk.date.past? %>
+              <li class="mb-2">👒<%= talk.date %>:  "<%= talk.topic %>"(<%= talk.name%>)</li>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

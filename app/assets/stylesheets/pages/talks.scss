@@ -1,0 +1,49 @@
+// Place all the styles related to the talks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hattalk-form {
+  margin: 50px auto;
+  width: 50%;
+}
+
+.hattalk-img img {
+  width: 250px;
+  height: 332px;
+}
+
+.upcoming-talks {
+  h1 {
+    text-align: center;
+  }
+  i {
+    font-size: 23px;
+    margin: 7px;
+    color: royalblue;
+  }
+  a {
+
+  }
+}
+
+.upcoming-talks-list {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.past-talks {
+  margin-bottom: 100px;
+  h1 {
+    text-align: center;
+  }
+}
+
+.past-talks-list {
+  margin: 0 auto;
+  width: 80%;
+}
+
+
+
+
+

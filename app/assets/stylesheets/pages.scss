@@ -1,3 +1,28 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sende-home-container {
+  margin: 0 auto;
+  margin-top: 90px;
+}
+
+.sende-home-headers {
+  text-align: center;
+}
+
+.sende-home-links {
+  text-align: left;
+  margin: 0 auto;
+  width: 32%;
+}
+
+.sende-home-links a {
+  color: black;
+  text-decoration: none;
+  font-family: Roboto;
+  &:hover {
+    font-weight: 900;
+    font-size: 29px;
+  }
+}
