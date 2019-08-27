@@ -1,17 +1,17 @@
  <%= form_for(talk) do |f| %>
     <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control', placeholder: 'Enter your name' %>
+      <label>Your name:</label>
+      <%= f.text_field :name, class: 'form-control' %>
     </div>
 
     <div class="form-group">
-      <%= f.label :topic %>
-      <%= f.text_field :topic, class: 'form-control', placeholder: 'Enter the topic...'  %>
+      <label>The title of your topic:</label>
+      <%= f.text_field :topic, class: 'form-control' %>
     </div>
 
     <div class="form-group">
-      <%= f.label :date %>
-      <%= f.text_field :date, class: 'form-control', placeholder: "Choose a date that doesn't conflict"  %>
+      <label>Choose a free date:</label>
+      <%= f.text_field :date, class: 'form-control' %>
     </div>
     <div class="d-flex justify-content-center mt-5">
       <%= f.submit class: "btn btn-primary btn-lg" %>
