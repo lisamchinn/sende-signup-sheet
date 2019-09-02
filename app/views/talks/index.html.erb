@@ -3,24 +3,24 @@
     <div class="col-sm-12 col-md-12 col-lg-12">
 
       <div class="sign-up-header d-flex justify-content-center">
-        <h1>Sign up for your hat talk!</h1>
+        <h1>Sign up for your hat talk</h1>
       </div>
 
       <div class="hattalk-form">
         <%= render 'form', talk: @talk %>
       </div>
 
-      <div class="upcoming-talks mt-3">
+      <div class="upcoming-talks mt-5 mb-3">
 
-        <div>
-          <h1>Upcoming talks:</h1>
+        <div class="pt-5 mt-5 pb-4">
+          <h2>Upcoming talks:</h2>
         </div>
 
-        <div class="upcoming-talks-list">
-          <h1><% @talks.each do |talk| %></h1>
+        <div>
+          <% @talks.each do |talk| %>
             <% unless talk.date.past? %>
-              <div class="d-flex">
-                <li class="mb-2">👨‍🌾   <%= talk.date %>:  "<%= talk.topic %>"(<%= talk.name%>)</li>
+              <div class="d-flex flex-wrap">
+                <li class="mb-2"><%= talk.date %>:  <%= talk.topic %> by <%= talk.name%></li>
                   <%= link_to edit_talk_url(talk) do %>
                     <i class="fas fa-pencil-alt"></i>
                   <% end %>
@@ -33,15 +33,15 @@
         </div>
       </div>
 
-      <div class="past-talks mt-5">
+      <div class="past-talks pt-4 mt-5">
         <div>
-          <h1>Past talks:</h1>
+          <h2 class="pb-4">Past talks:</h2>
         </div>
 
-        <div class="past-talks-list">
+        <div>
           <h1><% @talks.each do |talk| %></h1>
             <% if talk.date.past? %>
-              <li class="mb-2">👒<%= talk.date %>:  "<%= talk.topic %>"(<%= talk.name%>)</li>
+              <li class="mb-2"><%= talk.date %>: <%= talk.topic %> by <%= talk.name%></li>
             <% end %>
           <% end %>
         </div>
