@@ -55,6 +55,30 @@
   }
 }
 
+.contact-info {
+  margin: 0 auto;
+  margin-top: 180px;
+  p {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgba(85, 84, 89, 0.9);
+    text-align: center;
+  }
+  img {
+    text-align: center;
+  }
+}
+
+.avatar-large {
+  width: 120px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
