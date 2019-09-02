@@ -18,36 +18,41 @@
 
         <div>
           <% @talks.each do |talk| %>
-            <% unless talk.date.past? %>
-              <div>
-                <li class="mb-2"><%= talk.date.strftime('%e-%-m-%Y')%><span class="p-2"></span><%= talk.topic %> by <%= talk.name%>
-                  <%= link_to edit_talk_url(talk) do %>
-                    <i class="fas fa-pencil-alt"></i>
-                  <% end %>
-                  <%= link_to talk_path(talk), method: :delete, data: { confirm: "Are you sure you want to delete '#{talk.topic}'?" } do %>
-                    <i class="fas fa-trash"></i>
-                    <%= talk.attendance %></li>
-                    <% end %>
-              </div>
+          <% unless talk.date.past? %>
+          <div>
+            <li class="mb-2"><%= talk.date.strftime('%e-%-m-%Y')%><span class="p-2"></span><%= talk.topic %> by <%= talk.name%>
+              <%= link_to edit_talk_url(talk) do %>
+              <i class="fas fa-pencil-alt"></i>
               <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="past-talks pt-4 mt-5">
-        <div>
-          <h2 class="pb-4">Past talks:</h2>
-        </div>
-
-        <div>
-          <h1><% @talks.each do |talk| %></h1>
-            <% if talk.date.past? %>
-              <li class="mb-2"><%= talk.date.strftime('%e-%-m-%Y')%><span class="p-2"></span><%= talk.topic %> by <%= talk.name%></li>
+              <%= link_to talk_path(talk), method: :delete, data: { confirm: "Are you sure you want to delete '#{talk.topic}'?" } do %>
+              <i class="fas fa-trash"></i>
+              <%= talk.attendance %></li>
+              <% end %>
+            </div>
             <% end %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
 
+        <div class="past-talks pt-4 mt-5">
+          <div>
+            <h2 class="pb-4">Past talks:</h2>
+          </div>
+
+          <div>
+            <% @past_talks.each do |talk| %>
+            <% if talk.date.past? %>
+            <div>
+              <li class="mb-2"><%= talk.date.strftime('%e-%-m-%Y')%><span class="p-2"></span><%= talk.topic %> by <%= talk.name%>
+                <%= link_to talk_path(talk), method: :delete, data: { confirm: "Are you sure you want to delete '#{talk.topic}'?" } do %>
+                <i class="fas fa-trash"></i>
+                <%= talk.attendance %></li>
+                <% end %>
+                <% end %>
+              <% end %>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>

@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 2019_09_02_140458) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "completed"
+    t.boolean "completed", default: false
+    t.integer "attendance", default: 0
   end
 
 end

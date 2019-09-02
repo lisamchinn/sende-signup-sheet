@@ -31,7 +31,6 @@
   li {
     font-size: 18px;
     color: rgba(85, 84, 89, 0.9);
-    margin-right: 15px;
     font-family: 'Source Sans Pro', sans-serif;
   }
   &:hover {
@@ -50,6 +49,9 @@
     font-size: 18px;
     color: rgba(85, 84, 89, 0.9);
     font-family: 'Source Sans Pro', sans-serif;
+  }
+  i {
+    margin-left: 10px;
   }
 }
 
