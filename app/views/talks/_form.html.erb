@@ -1,16 +1,16 @@
  <%= form_for(talk) do |f| %>
     <div class="form-group">
       <label class="label-text">Your name:</label>
-      <%= f.text_field :name, class: 'form-control form-styling' %>
+      <%= f.text_field :name, class: 'form-control form-styling', :required => true %>
       </div>
     <div class="form-group">
       <label class="label-text">The title of your topic:</label>
-      <%= f.text_field :topic, class: 'form-control form-styling' %>
+      <%= f.text_field :topic, class: 'form-control form-styling', :required => true %>
     </div>
 
     <div class="form-group">
       <label class="label-text">Choose a free date:</label>
-      <%= f.text_field :date, class: 'form-control form-styling' %>
+      <%= f.text_field :date, class: 'form-control form-styling', :required => true %>
     </div>
 
     <p class="form-text">Talk starts at 19:00, unless you arrange a different time with the group</p>
