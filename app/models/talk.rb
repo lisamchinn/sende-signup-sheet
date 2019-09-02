@@ -1,3 +1,5 @@
+include CloudinaryHelper
+
 class Talk < ApplicationRecord
   validates :name, presence: true
   validates :topic, presence: true

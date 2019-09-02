@@ -5,7 +5,6 @@ class TalksController < ApplicationController
     @talks = Talk.all.order("date ASC")
     @past_talks = Talk.all.order("date DESC")
     @talk = Talk.new
-    #is this bad practice to put this here?
   end
 
   def new
