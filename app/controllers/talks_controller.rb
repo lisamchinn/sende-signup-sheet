@@ -38,8 +38,4 @@ class TalksController < ApplicationController
   def find_talk
     @talk = Talk.find(params[:id])
   end
-
-  def attend
-
-  end
 end
