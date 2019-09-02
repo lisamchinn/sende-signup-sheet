@@ -31,7 +31,7 @@ class TalksController < ApplicationController
   private
 
   def talk_params
-    params.require(:talk).permit(:name, :topic, :date, :completed)
+    params.require(:talk).permit(:name, :topic, :date, :completed, :attendance)
   end
 
   def find_talk
